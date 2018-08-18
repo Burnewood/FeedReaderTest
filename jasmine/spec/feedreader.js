@@ -95,6 +95,10 @@ describe('Initial Entries', function() {
            });
          });
 
+         it('function is called and has an entry', function(){
+           expect($('.entry').length).not.toBe(0);
+         });
+
 });
     /* Completed: Write a new test suite named "New Feed Selection" */
 describe('New Feed Selection', function() {
@@ -102,5 +106,11 @@ describe('New Feed Selection', function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+         beforeEach(function(done){
+           loadFeed(0, function(){
+             done();
+           });
+         });
+
 });
 }());
