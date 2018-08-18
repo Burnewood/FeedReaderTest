@@ -20,6 +20,9 @@ $(function() {
          * the rest of this project. What happens when you change
          * allFeeds in app.js to be an empty array and refresh the
          * page?
+
+         ! Tested by taking out the .not !
+
          */
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
@@ -27,7 +30,7 @@ $(function() {
         });
 
 
-        /* TODO: Write a test that loops through each feed
+        /* Completed: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
@@ -43,6 +46,15 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+
+         it('Name is defined and not empty', function(){
+           allFeeds.forEach(function(feed){
+             expect(feed.name).toBeDefined();
+             expect(feed.name.length).not.toBe(0);
+             expect(typeof feed.name).toEqual('string');
+           });
+         });
+
     });
 
 
