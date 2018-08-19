@@ -101,7 +101,7 @@ describe('Initial Entries', function() {
          });
         // uses same logic and structure as inital definition test on the entry element
          it('function is called and has an entry', function(){
-           expect($('.entry').length).not.toBe(0);
+           expect($('.feed .entry').length).not.toBe(0);
          });
 
 });
